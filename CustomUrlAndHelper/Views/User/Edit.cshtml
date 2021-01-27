@@ -1,4 +1,5 @@
 ﻿@model CustomUrlAndHelper.Models.User
+@using CustomUrlAndHelper.Helper
 
 @{
     ViewBag.Title = "Edit";
@@ -9,7 +10,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>User</h4>
         <hr />
@@ -41,5 +42,5 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    <a href="@Url.Gets("User")">Back to List</a>
 </div>

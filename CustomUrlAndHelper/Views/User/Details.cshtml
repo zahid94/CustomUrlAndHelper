@@ -1,4 +1,5 @@
 ﻿@model CustomUrlAndHelper.Models.User
+@using CustomUrlAndHelper.Helper
 
 @{
     ViewBag.Title = "Details";
@@ -29,6 +30,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    <a href="@Url.Edit("User", Model.Id)">Edit</a> |
+    <a href="@Url.Gets("User")">Back to List</a>
 </p>

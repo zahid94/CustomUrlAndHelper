@@ -1,13 +1,12 @@
 ﻿@model IEnumerable<CustomUrlAndHelper.Models.User>
-
+@using CustomUrlAndHelper.Helper
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
-
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a href="@Url.Create("User")">Create</a>
 </p>
 <table class="table">
     <tr>
@@ -29,9 +28,9 @@
             @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            <a href="@Url.Edit("User", item.Id)">Edit</a>|
+            <a href="@Url.Details("User", item.Id)">Details</a>|
+            <a href="@Url.Delete("User", item.Id)">Detele</a>
         </td>
     </tr>
 }
